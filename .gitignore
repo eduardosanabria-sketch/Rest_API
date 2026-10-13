@@ -1,0 +1,21 @@
+# Dependencias
+node_modules/
+
+# Variables de entorno y credenciales (si usas Sequelize con config/config.json o .env)
+.env
+config/config.json
+
+# Logs de ejecución
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Directorios de compilación o temporales
+dist/
+build/
+.vscode/

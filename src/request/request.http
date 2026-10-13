@@ -1,0 +1,80 @@
+@baseUrl = http://localhost:3000/api/v1
+
+### AUXILIARES1
+GET {{baseUrl}}/roles
+### AUXILIARES2
+GET {{baseUrl}}/estados
+### AUXILIARES3
+GET {{baseUrl}}/tipos-roster
+### AUXILIARES4
+GET {{baseUrl}}/health
+
+### JUGADORES1
+GET {{baseUrl}}/jugadores
+### JUGADORES2
+POST {{baseUrl}}/jugadores
+Content-Type: application/json
+
+{
+    "Nickname": "Faker",
+    "Nombre": "Lee Sang-hyeok",
+    "Pais": "Corea del Sur",
+    "Rol": "Mid",
+    "Estado": "activo"
+}
+### JUGADORES3
+GET {{baseUrl}}/jugadores/1
+### JUGADORES4
+PUT {{baseUrl}}/jugadores/1
+Content-Type: application/json
+
+{
+    "Nickname": "T1 Faker"
+}
+### JUGADORES5
+DELETE {{baseUrl}}/jugadores/1
+
+### ROSTERS1
+GET {{baseUrl}}/rosters
+### ROSTERS2
+POST {{baseUrl}}/rosters
+Content-Type: application/json
+
+{
+    "Nombre": "T1 Main",
+    "Tipo": "Principal",
+    "Temporada": 2026
+}
+### ROSTERS3
+GET {{baseUrl}}/rosters/1
+### ROSTERS4
+PUT {{baseUrl}}/rosters/1
+Content-Type: application/json
+
+{
+    "Nombre": "T1 Worlds"
+}
+### ROSTERS5
+DELETE {{baseUrl}}/rosters/1
+
+### ASIGNACIONES1
+GET {{baseUrl}}/rosters/1/jugadores
+### ASIGNACIONES2
+
+POST {{baseUrl}}/rosters/1/jugadores
+Content-Type: application/json
+
+{
+    "id_jugador": 1,
+    "rol_en_roster": "titular"
+}
+
+### ASIGNACIONES3
+PUT {{baseUrl}}/rosters/1/jugadores/1
+Content-Type: application/json
+
+{
+    "rol_en_roster": "suplente"
+}
+### ASIGNACIONES4
+DELETE {{baseUrl}}/rosters/1/jugadores/1
