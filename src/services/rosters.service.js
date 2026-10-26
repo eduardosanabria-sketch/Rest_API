@@ -31,13 +31,27 @@ export const verDetalleRosterService = async (id) => {
 };
 
 export const crearRosterService = async (datos) => {
-    return await Roster.create(datos);
+    const payload = {
+        Nombre: datos.Nombre || datos.nombre,
+        Juego: datos.Juego || datos.juego,
+        Tipo: datos.Tipo || datos.tipo,         
+        Temporada: datos.Temporada || datos.temporada
+    };
+    return await Roster.create(payload);
 };
 
 export const editarRosterService = async (id, datosNuevos) => {
     const roster = await Roster.findByPk(id);
     if (!roster) throw new Error('Roster no encontrado');
-    return await roster.update(datosNuevos); 
+
+    const payload = {
+        Nombre: datosNuevos.Nombre || datosNuevos.nombre,
+        Juego: datosNuevos.Juego || datosNuevos.juego,
+        Tipo: datosNuevos.Tipo || datosNuevos.tipo,       
+        Temporada: datosNuevos.Temporada || datosNuevos.temporada
+    };
+
+    return await roster.update(payload); 
 };
 
 export const eliminarRosterService = async (id) => {

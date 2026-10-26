@@ -3,9 +3,7 @@ const { Jugador, Roster } = db;
 import { Op } from 'sequelize';
 
 export const listarJugadoresService = async () => {
-    return await Jugador.findAll({
-        attributes: ['Nickname', 'Rol', 'Pais', 'Estado'] 
-    });
+    return await Jugador.findAll();
 };
 
 export const verDetalleJugadorService = async (id) => {
